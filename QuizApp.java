@@ -61,11 +61,12 @@ public class QuizApp{
     public static class Quiz{
         
         public void quizMenu(Users user){
-            while(true){
+                while(true){
+                System.out.println("----Quiz: Options----");
                 System.out.println("1. Take a Quiz \n2. View Quiz History \n3. Logout");
                 int choice_ = sc.nextInt();
                 sc.nextLine();
-                while (true){
+                
                     switch(choice_){
                         case 1: 
         
@@ -85,16 +86,15 @@ public class QuizApp{
                                 
                         case 2: 
                             System.out.println("Quiz History for User: \n1. Java Basics - Score : " + user.getscore1() + "\n2. Data Structure - Score : " + user.getscore2());
-                            break;
+                            return;
                             
                         case 3: 
                             return;
 
                         default: System.out.println("Invalid Choice!");
                     }
-
                 }
-            }
+                
         }
 
         public void javaBasics(Users user){
@@ -131,7 +131,7 @@ public class QuizApp{
         public void dsa(Users user){   
 
             int score2 = 0;
-            System.out.println("----Quiz: Java Basics----");
+            System.out.println("----Quiz: Data Structure----");
             System.out.println("What is the correct syntax to declare a variable of type int in Java? \n A) int variableName; \n B) int variableName = ; \n C) int variableName = 10; \n D) variableName int = 10;");
             System.out.print("Your answer: ");
             String ans1 = sc.nextLine();
